@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Text;
+using System.Collections.Generic; using System.Text;
+using Activ.Lang;
 
-namespace BasicXML
+namespace BasicXML.ViaMultiparser
 {
     internal class ValidationModel
     {
 
         Stack<string> path = new Stack<string>();
         StringBuilder currentTag;
-        bool? isClosingTag;
+        public bool? isClosingTag { get; private set; }
 
         public bool isComplete
         => path.Count == 0 && currentTag == null;
